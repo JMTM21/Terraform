@@ -1,11 +1,9 @@
-terraform {
-    required_providers {
-      azurerm = { 
-        source = "hasicorp/azurerm"
-        version = "=3.0.0"
-        }
+#create resource group
+resource "azurerm_resource_group" "az-rsg" {
 
-
-    }
+    name = "rsg-demo"
+    location = "UK South"
+    tags = "rsg-demo"
   
 }
+
