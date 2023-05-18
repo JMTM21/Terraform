@@ -25,7 +25,7 @@ resource "azurerm_network_security_group" "az-nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
-    source_address_prefix      = "my ip address"
+    source_address_prefix      = "86.1.92.18"
     destination_address_prefix = "*"
   }
 
