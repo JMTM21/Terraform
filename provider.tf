@@ -1,6 +1,7 @@
 #Terrform suggests everything inside the brackets is to be read as terraform
 #The required providers is pulling in the provider we want to use and sepcifying what the source and version are
 terraform {
+    required_version = ">=1.3.9"
     required_providers {
       azurerm = { 
         source = "hasicorp/azurerm"
