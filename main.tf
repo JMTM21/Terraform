@@ -18,9 +18,23 @@ resource "azurerm_network_security_group" "az-nsg" {
 
 #rules below allowing rdp from 1 IP, deny all else
     security_rule {
+        name = "allow rdp"
+        priority = 100
+        direction = "inbound"
+        access = "allow"
+        protocol = "RDP"
+        source_port_range = "3389"
+        destination_port_range = "*"
+        source_address_prefix = "*"
+        destination_address_prefix = "*"
     }
 
     security_rule {
+        name = "deny all"
+        priority = 101
+        direction = "inbound"
+        access = "deny"
+
     }
 
     tags = {
