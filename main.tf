@@ -2,9 +2,9 @@
 resource "azurerm_resource_group" "az-rsg" {
 
   name     = "rsg-demo"
-  location = "UK South"
+  location = var.location
   tags = {
-    enviroment = "demo"
+    enviroment = var.tag
   }
 
 }
@@ -43,7 +43,7 @@ resource "azurerm_network_security_group" "az-nsg" {
   }
 
   tags = {
-    enviroment = "demo"
+    enviroment = var.tag
   }
 
 
@@ -64,7 +64,7 @@ resource "azurerm_virtual_network" "az-vnet" {
 
   }
   tags = {
-    enviroment = "demo"
+    enviroment = var.tag
   }
 
 

@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "az-nic" {
 
   }
   tags = {
-    enviroment = "demo"
+    enviroment = var.tag
   }
 
 }
@@ -57,7 +57,7 @@ resource "azurerm_virtual_machine" "az-vm" {
 
 
   tags = {
-    enviroment = "demo"
+    enviroment = var.tag
   }
 
 

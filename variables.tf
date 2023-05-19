@@ -12,3 +12,8 @@ variable "admin_password" {
   type = string
 
 }
+
+variable "tag" {
+  type = string
+
+}
