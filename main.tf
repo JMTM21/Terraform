@@ -16,12 +16,12 @@ resource "azurerm_network_security_group" "az-nsg" {
   location            = azurerm_resource_group.az-rsg.location
   resource_group_name = azurerm_resource_group.az-rsg.name
 
-  #rules below allowing rdp from 1 IP, deny all else
+  #rules below Allowing rdp from 1 IP, Deny all else
   security_rule {
-    name                       = "allow rdp"
+    name                       = "Allow rdp"
     priority                   = 100
-    direction                  = "inbound"
-    access                     = "allow"
+    direction                  = "Inbound"
+    access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
@@ -30,10 +30,10 @@ resource "azurerm_network_security_group" "az-nsg" {
   }
 
   security_rule {
-    name                       = "deny all"
+    name                       = "Deny all"
     priority                   = 101
-    direction                  = "inbound"
-    access                     = "deny"
+    direction                  = "Inbound"
+    access                     = "Deny"
     protocol                   = "*"
     source_port_range          = "*"
     destination_port_range     = "*"
