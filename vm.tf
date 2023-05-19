@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "az-nic" {
 
   ip_configuration {
     name                          = "ipconfig-demo"
-    subnet_id                     = azurerm_virtual_network.az-vnet.subnet.id
+    subnet_id                     = tolist(azurerm_virtual_network.az-vnet.subnet[0].id)
     private_ip_address_allocation = "Dynamic"
 
   }
