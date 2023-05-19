@@ -19,7 +19,7 @@ resource "azurerm_network_interface" "az-nic" {
 }
 
 #creates VM
-resource "azurerm_virtual_machine" "az-vm" {
+resource "azurerm_linux_virtual_machine" "az-vm" {
   name                  = "vm-demo"
   resource_group_name   = azurerm_resource_group.az-rsg.name
   location              = azurerm_resource_group.az-rsg.location
