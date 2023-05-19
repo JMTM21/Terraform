@@ -26,6 +26,7 @@ resource "azurerm_virtual_machine" "az-vm" {
   network_interface_ids = [azurerm_network_interface.az-nic.id]
   vm_size               = "Standard_DS1_v2"
 
+#specifies image 
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -34,6 +35,7 @@ resource "azurerm_virtual_machine" "az-vm" {
 
   }
 
+#config disk 
   storage_os_disk {
     name              = "osdisk-demo"
     caching           = "ReadWrite"
@@ -41,6 +43,8 @@ resource "azurerm_virtual_machine" "az-vm" {
     managed_disk_type = "Standard_LRS"
 
   }
+
+  #config profile
 
   os_profile {
     computer_name  = "vmserver-demo"
