@@ -44,8 +44,14 @@ resource "azurerm_virtual_machine" "az-vm" {
 
   os_profile {
     computer_name  = "vmserver-demo"
-    admin_username = "demoadmin1"
-    admin_password = "VARIABLISETHISBEFOREDEPLOYING!!!!!!!!!!!!!!!!!!!!!!!!!"
+    admin_username = var.admin_username
+    admin_password = var.admin_password
+
+  }
+
+  os_profile_linux_config {
+
+    disable_password_authentication = false
 
   }
 
