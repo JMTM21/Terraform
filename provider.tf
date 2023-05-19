@@ -12,12 +12,12 @@ terraform {
   }
 }
 
-  #Can specify certain features below, not essential but block has to be there
+#Can specify certain features below, not essential but block has to be there
 
-  provider "azurerm" {
-    features {}
+provider "azurerm" {
+  features {}
 
-  }
+}
 
 
 
