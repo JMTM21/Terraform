@@ -2,7 +2,7 @@
 
 resource "azurerm_network_interface" "az-nic" {
 
-  name                = "nsg-demo"
+  name                = "nic-demo"
   location            = azurerm_resource_group.az-rsg.location
   resource_group_name = azurerm_resource_group.az-rsg.name
 
@@ -20,18 +20,19 @@ resource "azurerm_network_interface" "az-nic" {
 
 #creates VM
 resource "azurerm_linux_virtual_machine" "az-vm" {
-  name                  = "vm-demo"
-  resource_group_name   = azurerm_resource_group.az-rsg.name
-  location              = azurerm_resource_group.az-rsg.location
-  network_interface_ids = [azurerm_network_interface.az-nic.id]
-  size               = "Standard_F2"
-  admin_username        = var.admin_username
-
+  name                            = "vm-demo"
+  resource_group_name             = azurerm_resource_group.az-rsg.name
+  location                        = azurerm_resource_group.az-rsg.location
+  network_interface_ids           = [azurerm_network_interface.az-nic.id]
+  size                            = "Standard_DS1_v2"
+  admin_username                  = var.admin_username
+  disable_password_authentication = false
+  admin_password                  = var.admin_password
   #specifies image 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "20.04-LTS"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
     version   = "latest"
 
   }
