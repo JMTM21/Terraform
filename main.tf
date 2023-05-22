@@ -1,3 +1,10 @@
+/*
+This config is mainly for creating a Linux VM in Azure with some others
+Also testing for Terraform Associate Exam
+Author: Jack Meehan
+*/
+
+
 #create resource group
 resource "azurerm_resource_group" "az-rsg" {
 
@@ -18,7 +25,7 @@ resource "azurerm_network_security_group" "az-nsg" {
 
   #rules below Allowing rdp from 1 IP, Deny all else
   security_rule {
-    name                       = "Allow rdp"
+    name                       = "Allowrdp"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
@@ -30,7 +37,7 @@ resource "azurerm_network_security_group" "az-nsg" {
   }
 
   security_rule {
-    name                       = "Deny all"
+    name                       = "Denyall"
     priority                   = 101
     direction                  = "Inbound"
     access                     = "Deny"

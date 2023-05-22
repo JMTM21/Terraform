@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "az-vm" {
   size                            = "Standard_DS1_v2"
   admin_username                  = var.admin_username
   disable_password_authentication = false
-  admin_password                  = data.azurerm_key_vault_secret.vm-secrets
+  admin_password                  = data.azurerm_key_vault_secret.vm-secret.value
   #specifies image 
   source_image_reference {
     publisher = "Canonical"
